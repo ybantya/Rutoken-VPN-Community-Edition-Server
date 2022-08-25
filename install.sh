@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repositoryUrl="https://github.com/AktivCo/Rutoken-VPN-Community-Edition-Server.git"
+repositoryUrl="https://github.com/ybantya/Rutoken-VPN-Community-Edition-Server.git"
 branch=public
 PROJECT_NAME=Rutoken-VPN-Community-Edition-Server
 ROOT_PROJECT_PATH=/opt/$PROJECT_NAME
@@ -82,6 +82,11 @@ chown -R  ubuntu:ubuntu $ROOT_PROJECT_PATH
 cat > /etc/nginx/sites-enabled/default <<EOF
 server {
   listen 80;
+  #listen 443 ssl; #uncomment for ssl and allow ips
+    #allow 192.168.0.0/24;
+    #deny all;
+    #ssl_certificate /etc/openvpn/pki/issued/vpnserver.crt;
+    #ssl_certificate_key /etc/openvpn/pki/private/vpnserver.key;
     location /static {
         include  /etc/nginx/mime.types;
         alias $ROOT_PROJECT_PATH/vpnserver/static/;

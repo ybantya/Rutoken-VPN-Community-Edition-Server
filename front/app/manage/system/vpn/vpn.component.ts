@@ -41,7 +41,7 @@ export class SystemVpnComponent extends DynamicComponent implements OnInit {
 
     ngOnInit(): void {
         this.options = {
-            network: ['192.168.254.0', '10.128.0.0', '172.16.254.0'],
+            network: ['192.168.244.0', '192.168.245.0', '192.168.246.0'],
             type: ['BF-CBC', 'AES-256-CBC'],
         };
         this.getVPNSettings().then(

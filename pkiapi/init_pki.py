@@ -11,8 +11,8 @@ def init_folder_structure(sudo_mode=False):
     retcode = 0
     if sudo_mode:
         os.system("sudo chown -R ubuntu:ubuntu %s" % EXEC_PATHS.VPN_FOLDER)
-    if os.path.exists(EXEC_PATHS.PKI_FOLDER):
-        shutil.rmtree(EXEC_PATHS.PKI_FOLDER)
+    #if os.path.exists(EXEC_PATHS.PKI_FOLDER):
+    #    shutil.rmtree(EXEC_PATHS.PKI_FOLDER)
 
     pki_folders = [
         EXEC_PATHS.PKI_FOLDER,
